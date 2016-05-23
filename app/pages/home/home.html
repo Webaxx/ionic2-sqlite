@@ -1,0 +1,36 @@
+<ion-navbar *navbar teal>
+  <ion-title>Webaxx</ion-title>
+</ion-navbar>
+
+<ion-content padding class="page1">
+  <h2>SQLite tuto</h2>
+
+    <ion-card *ngFor="#champion of champions">
+
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="http://ddragon.leagueoflegends.com/cdn/6.10.1/img/champion/{{champion.shortname}}.png">
+        </ion-avatar>
+        <h2>{{champion.fullname}}</h2>
+        <p>{{champion.title}}</p>
+      </ion-item>
+
+      <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champion.shortname}}_0.jpg">
+
+      <ion-card-content>
+        <p>{{champion.story}}</p>
+      </ion-card-content>
+
+      <ion-item>
+        <button primary clear item-left (click) = "win(champion)">
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>{{champion.likes}} Wins</div>
+        </button>
+        <button primary clear item-left (click) = "deleteChampion(champion)">
+          <ion-icon name="trash"></ion-icon>
+          <div>Delete</div>
+        </button>
+      </ion-item>
+
+  </ion-card>
+</ion-content>
